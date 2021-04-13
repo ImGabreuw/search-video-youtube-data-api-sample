@@ -1,28 +1,81 @@
 # search-video-youtube-data-api-sample
 
-### Response for _http://localhost:8080/search/query/JPB%20-%20Top%20Floor_
+![GitHub repo size](https://img.shields.io/github/repo-size/ImGabreuw/search-video-youtube-data-api-sample?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/ImGabreuw/search-video-youtube-data-api-sample?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/ImGabreuw/search-video-youtube-data-api-sample?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/ImGabreuw/search-video-youtube-data-api-sample?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/ImGabreuw/search-video-youtube-data-api-sample?style=for-the-badge)
 
-```json
-{
-    "id": {
-        "videoId": "h-jxgXxRgnM"
-    },
-    "snippet": {
-        "description": "NCS Arcade → our official second channel has just launched, including our brand new 24/7 Livestream! Join in here: https://ncs.lnk.to/LiveStream ...",
-        "title": "JPB - Top Floor [NCS Release]"
-    }
-}
+![preview]()
+
+> Esse projeto foi desenvolvido com o intuito de explorar a [YouTube Data API](https://developers.google.com/youtube/v3) e reforçar meus conhecimentos em Java e Spring.
+
+### Ajustes e melhorias
+
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+
+- [x] Padrão de Projeto DTO
+- [x] Refatoração nos Endpoints
+- [ ] Endpoint - Busca por tópicos
+- [ ] Em breve mais ...
+
+## 💻 Pré-requisitos
+
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+* Versão mais recente de `<jdk / Intellij IDEA>`
+* Máquina compatíveis `<Windows / Linux / Mac>`
+
+## 🚀 Instalando search-video-youtube-data-api-sample
+
+Para instalar o **search-video-youtube-data-api-sample**, siga estas etapas:
+
+Linux e macOS e Windows:
+```bash
+git clone https://github.com/ImGabreuw/search-video-youtube-data-api-sample.git
 ```
 
+## ☕ Usando search-video-youtube-data-api-sample
 
-### Response for _http://localhost:8080/search/id/h-jxgXxRgnM_
+Para usar **search-video-youtube-data-api-sample**, siga estas etapas:
 
-```json
-{
-    "id": "h-jxgXxRgnM",
-    "title": "JPB - Top Floor [NCS Release]",
-    "description": "NCS: Music Without Limitations\nOur Spotify Playlist → http://spoti.fi/NCS\n\nFree Download / Stream: http://ncs.io/TopFloor\n\n[NCS]\n• http://soundcloud.com/NoCopyrightSounds\n• http://instagram.com/NoCopyrightSounds\n• http://facebook.com/NoCopyrightSounds\n• http://twitter.com/NCSounds\n• https://www.twitch.tv/nocopyrightsounds\n\n[JPB]\n• https://www.facebook.com/jpbmusic\n• https://www.instagram.com/jpbofficial\n• https://soundcloud.com/jpb\n\nBecome a SuperFan → http://ncs.io/SuperFan\nNCS Merchandise → http://ncs.io/StoreID\n\nNCS Arcade →  our official second channel has just launched, including our brand new 24/7 Livestream! \n\nJoin in here: https://ncs.lnk.to/LiveStream\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\nWhen you are using this track, we simply ask that you put this in your description:\n\nTrack: JPB - Top Floor [NCS Release]\nMusic provided by NoCopyrightSounds.\nWatch: https://youtu.be/h-jxgXxRgnM\nFree Download / Stream: http://ncs.io/TopFloor\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n©️ Check out our Usage Policy on how to use NCS music in your videos: http://ncs.io/UsagePolicy\n\nTo request a commercial license visit: http://ncs.io/Commercial\n\n#nocopyrightsounds #copyrightfree",
-    "link": "https://www.youtube.com/watch?v=h-jxgXxRgnM",
-    "duration": "03:36"
-}
-```
+* Basta abrir o projeto e o arquivo ApplicationStarter.java
+* Em seguida precione as seguintes teclas ```CONTROL + SHIFT + F10```
+
+## 📫 Contribuindo para search-video-youtube-data-api-sample
+Para contribuir com **search-video-youtube-data-api-sample**, siga estas etapas:
+
+1. Bifurque este repositório.
+2. Crie um branch: `git checkout -b <nome_branch>`.
+3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
+4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
+5. Crie a solicitação de pull.
+
+Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+## 🤝 Colaboradores
+
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/ImGabreuw">
+        <img src="https://avatars.githubusercontent.com/u/60116449?v=4" width="100px;" alt="Foto do ImGabreuw no GitHub"/><br>
+        <sub>
+          <b>ImGabreuw</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+## 😄 Seja um dos contribuidores<br>
+
+Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
+
+## 📝 Licença
+
+Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
+
+[⬆ Voltar ao topo](#search-video-youtube-data-api-sample)<br>
