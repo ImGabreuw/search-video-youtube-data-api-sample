@@ -5,42 +5,38 @@ import com.google.api.services.youtube.model.SearchResult;
 import com.google.api.services.youtube.model.Video;
 import lombok.SneakyThrows;
 import me.gabreuw.search_video_youtube_data_api_sample.domain.factory.SearchFactory;
-import me.gabreuw.search_video_youtube_data_api_sample.service.exception.NoSearchResultException;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SearchService {
 
-    @Value("${youtube.api.key}")
-    private String key;
+    @Autowired
+    private SearchFactory searchFactory;
 
     @SneakyThrows(IOException.class)
     public SearchResult searchByQuery(String query) {
-        YouTube.Search.List searchByQuery = SearchFactory.createSearchByQuery(query, key);
+        YouTube.Search.List request = searchFactory.createRequestWithQuery(query);
 
-        List<SearchResult> searchResults = searchByQuery.execute().getItems();
+        List<SearchResult> response = request.execute().getItems();
 
-        return Optional.ofNullable(searchResults)
-                .filter(results -> !results.isEmpty())
-                .map(results -> results.get(0))
-                .orElseThrow(() -> new NoSearchResultException(query));
+        return response.isEmpty() ?
+                null :
+                response.get(0);
     }
 
     @SneakyThrows(IOException.class)
-    public Video searchVideoById(String id) {
-        YouTube.Videos.List searchById = SearchFactory.createSearchById(id, key);
+    public Video searchVideoById(String videoId) {
+        YouTube.Videos.List request = searchFactory.createRequestWithVideoId(videoId);
 
-        List<Video> videos = searchById.execute().getItems();
+        List<Video> response = request.execute().getItems();
 
-        return Optional.ofNullable(videos)
-                .filter(results -> !results.isEmpty())
-                .map(results -> results.get(0))
-                .orElseThrow(() -> new NoSearchResultException(id));
+        return response.isEmpty() ?
+                null :
+                response.get(0);
     }
 
 }

@@ -2,33 +2,39 @@ package me.gabreuw.search_video_youtube_data_api_sample.domain.factory;
 
 import com.google.api.services.youtube.YouTube;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+@Component
 public class SearchFactory {
+
+    @Value("${youtube.key}")
+    private String key;
+
     @SneakyThrows(IOException.class)
-    public static YouTube.Search.List createSearchByQuery(String query, String key) {
-        YouTube.Search.List search = YouTubeFactory.create()
+    public YouTube.Search.List createRequestWithQuery(String query) {
+        YouTube.Search.List videoId = YouTubeFactory.create()
                 .search()
-                .list("id,snippet");
+                .list("id");
 
-        search.setKey(key);
-        search.setQ(query);
-        search.setType("video");
-        search.setFields("items(id/videoId,snippet/title,snippet/description)");
-        search.setMaxResults(1L);
+        videoId.setKey(key);
+        videoId.setQ(query);
+        videoId.setType("video");
+        videoId.setMaxResults(1L);
 
-        return search;
+        return videoId;
     }
 
     @SneakyThrows(IOException.class)
-    public static YouTube.Videos.List createSearchById(String id, String key) {
+    public YouTube.Videos.List createRequestWithVideoId(String videoId) {
         YouTube.Videos.List search = YouTubeFactory.create()
                 .videos()
-                .list("snippet, contentDetails");
+                .list("snippet,contentDetails,statistics");
 
         search.setKey(key);
-        search.setId(id);
+        search.setId(videoId);
 
         return search;
     }

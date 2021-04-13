@@ -16,8 +16,8 @@ public class DateHelper {
     @SneakyThrows(ParseException.class)
     public static String getVideoDurationFromDateFormatted(String date) {
         Date parsedDate = SIMPLE_DATE_FORMAT.parse(date);
-        Calendar calendar = new GregorianCalendar();
 
+        Calendar calendar = new GregorianCalendar();
         calendar.setTime(parsedDate);
         calendar.setTimeZone(TimeZone.getDefault());
 
