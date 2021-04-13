@@ -18,17 +18,6 @@ public class SearchResource {
     @Autowired
     private SearchService searchService;
 
-    @GetMapping(path = "/query/{query}")
-    public ResponseEntity<SearchResult> searchByQuery(
-            @PathVariable String query
-    ) {
-        SearchResult searchByName = searchService.searchByQuery(query);
-
-        return ResponseEntity
-                .ok()
-                .body(searchByName);
-    }
-
     @GetMapping(path = "/videoId/{videoId}")
     public ResponseEntity<VideoDTO> searchByVideoId(
             @PathVariable String videoId
